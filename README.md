@@ -2,7 +2,7 @@
 
 ## Overview
 
-This project demonstrates the design and implementation of a production-inspired end-to-end data engineering pipeline using the AdventureWorks dataset. Raw data is extracted from AWS S3, validated and uploaded to Databricks, processed through a Medallion Architecture (Bronze, Silver, Gold), orchestrated with Apache Airflow, and transformed into business-ready datasets for advanced SQL analytics and Power BI reporting.
+This project demonstrates the design and implementation of a production-inspired end-to-end data engineering pipeline using the AdventureWorks dataset. Raw data is extracted from AWS S3, validated and uploaded to Databricks, processed through a Medallion Architecture (Bronze, Silver, Gold), and transformed into business-ready datasets for advanced SQL analytics and Power BI reporting. Everything was orchestrated with Apache Airflow.
 
 ---
 
@@ -77,7 +77,7 @@ Apache Airflow orchestrates the complete workflow.
 
 ## SQL Business Analytics
 
-The Gold layer supports advanced business analytics by answering real business questions, including:
+The SQL Analytics layer supports advanced business analytics by answering real business questions, including:
 
 - Monthly sales trends and month-over-month growth
 - Product category revenue contribution
