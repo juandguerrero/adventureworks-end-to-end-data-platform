@@ -2,89 +2,108 @@
 
 ## Overview
 
-This project demonstrates a production-inspired end-to-end data engineering pipeline built with AWS, Python, Databricks, Apache Airflow, SQL, and Power BI. Raw AdventureWorks data is extracted from AWS S3, validated, processed through a Medallion Architecture (Bronze, Silver, Gold), and transformed into business-ready datasets for analytics and reporting.
+This project demonstrates the design and implementation of a production-inspired end-to-end data engineering pipeline using the AdventureWorks dataset. The pipeline extracts raw data from AWS S3, validates and uploads it to Databricks, processes it through a Medallion Architecture (Bronze, Silver, Gold), automates the entire workflow with Apache Airflow, and delivers business-ready insights through advanced SQL analytics and Power BI dashboards.
 
 ---
 
 ## Architecture
 
 ```
-AWS S3
-   │
-   ▼
+AdventureWorks CSV Files
+        │
+        ▼
+AWS S3 (Raw Layer)
+        │
+        ▼
 Python ETL
-(Data Validation & Logging)
-   │
-   ▼
+• File Validation
+• Metadata Validation
+• Logging
+        │
+        ▼
 Databricks Unity Catalog Volume
-   │
-   ▼
-Bronze → Silver → Gold
-   │
-   ▼
+        │
+        ▼
+Bronze Layer
+        │
+        ▼
+Silver Layer
+        │
+        ▼
+Gold Layer (Star Schema)
+        │
+        ▼
 SQL Analytics
-   │
-   ▼
+        │
+        ▼
 Power BI Dashboard
 
-(Apache Airflow orchestrates the complete workflow)
+Apache Airflow orchestrates the complete workflow.
 ```
 
 ---
 
 ## Technology Stack
 
-- Python
-- AWS S3
-- Databricks
-- PySpark
-- Delta Lake
-- Apache Airflow
-- SQL
-- Power BI
-- Git & GitHub
+| Category | Technologies |
+|----------|--------------|
+| Programming | Python |
+| Cloud Storage | AWS S3 |
+| Data Platform | Databricks |
+| Processing | PySpark, Delta Lake |
+| Orchestration | Apache Airflow |
+| Analytics | SQL |
+| Visualization | Power BI |
+| Version Control | Git & GitHub |
 
 ---
 
-## Key Features
+## Project Features
 
 - Automated end-to-end ETL pipeline
-- AWS S3 data ingestion and validation
-- Medallion Architecture (Bronze, Silver, Gold)
-- Data quality and referential integrity validations
-- Star Schema dimensional model
-- Apache Airflow orchestration
-- Interactive Power BI dashboard
+- AWS S3 data ingestion with validation and logging
+- Upload of validated files to Databricks Unity Catalog Volumes
+- Bronze, Silver, and Gold Medallion Architecture
+- Data cleaning, standardization, and quality validation
+- Referential integrity checks across tables
+- Star Schema dimensional model for analytics
+- Automated pipeline orchestration with Apache Airflow
+- Business intelligence dashboard in Power BI
 - 15 advanced SQL analytical solutions
 
 ---
 
-## Business Analytics
+## SQL Business Analytics
 
-The SQL layer answers real business questions using advanced SQL techniques, including:
+The Gold layer supports advanced business analytics through SQL views that answer questions such as:
 
-- Monthly sales growth and MoM analysis
-- Revenue contribution by product category
-- Top customer lifetime value analysis
-- Customer churn identification
+- Monthly sales trends and month-over-month growth
+- Product category revenue contribution
+- Top customers by lifetime value
+- Customer inactivity and churn risk
 - Top-performing products
-- Product affinity analysis
+- Frequently purchased product combinations
 - Territory and salesperson performance
-- Seasonal sales trends
-- RFM customer segmentation
+- Seasonal and weekday sales patterns
+- Customer value migration
+- Complete RFM customer segmentation
 
-Advanced SQL concepts used include:
+Advanced SQL techniques used include CTEs, Window Functions, LAG(), LEAD(), DENSE_RANK(), NTILE(), CASE expressions, Self Joins, Subqueries, and Aggregations.
 
-- CTEs
-- Window Functions
-- LAG() / LEAD()
-- DENSE_RANK()
-- NTILE()
-- CASE Expressions
-- Self Joins
-- Subqueries
-- Aggregations
-- Date Functions
+---
+
+## Pipeline Workflow
+
+1. Extract AdventureWorks data from AWS S3
+2. Validate files and metadata
+3. Upload validated files to Databricks Unity Catalog Volumes
+4. Load raw data into the Bronze Layer
+5. Clean and validate data in the Silver Layer
+6. Build a Star Schema in the Gold Layer
+7. Execute SQL analytical views
+8. Visualize business insights with Power BI
+
+The complete workflow is automatically orchestrated by Apache Airflow, providing task dependency management, execution monitoring, and logging.
 
 ---
 
@@ -105,8 +124,9 @@ requirements.txt
 
 ## Future Improvements
 
-- CI/CD with GitHub Actions
+- CI/CD pipeline with GitHub Actions
 - Infrastructure as Code (Terraform)
-- Incremental Data Loading
-- Automated Testing
-- Real-time Data Streaming
+- Incremental data loading
+- Automated testing
+- Data quality monitoring
+- Docker containerization
