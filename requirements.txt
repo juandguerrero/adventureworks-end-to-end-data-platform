@@ -1,1 +1,11 @@
+# AWS SDK for connecting to S3 and downloading AdventureWorks source files
+boto3
 
+# Databricks SDK for uploading validated files to Unity Catalog Volumes
+databricks-sdk
+
+# Loads environment variables (AWS credentials, Databricks host/token) from a .env file
+python-dotenv
+
+# HTTP client used for REST API communication
+requests
