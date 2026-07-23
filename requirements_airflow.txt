@@ -1,0 +1,5 @@
+# Apache Airflow workflow orchestration platform
+apache-airflow
+
+# Standard Airflow operators (PythonOperator, BashOperator, etc.)
+apache-airflow-providers-standard
